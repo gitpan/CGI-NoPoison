@@ -1,0 +1,32 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.44.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 2cdae574ee38efe0edbc855961da4150a62edb91 Changes
+SHA1 f235ba4160673bcb7c9d58c2f09dbc7fc0efadea LICENSE
+SHA1 72bf8b7ecd3b66fd4355d1ccbeb9236501f198d0 MANIFEST
+SHA1 5a56107f5b6fb8278dfbeb4060edc7e1b65515ef META.yml
+SHA1 9c690dcaae03854a7bbfe48123f8996f8bc2b63c Makefile.PL
+SHA1 d039bf925d3d2b18d2f2b3fa38d7fc4fcb6cc21c README
+SHA1 a3b33d98dd63ddea1c71c6e7127efdded813c292 Todo
+SHA1 c5bba75d342774ffd078b508938b04c825f9ebec lib/CGI/NoPoison.pm
+SHA1 bb0e0f618e1f4867a84c5ff9cc79a6be3de48e02 t/001_load.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.1 (GNU/Linux)
+
+iD8DBQFC1pIWlfQeTCNIWLARAs6OAKCI+66D6RdPSytJ4ko0mSJDpCx07gCZAYVJ
+RBLOO5Mu42+ntgppPuOAaeQ=
+=mNKT
+-----END PGP SIGNATURE-----
