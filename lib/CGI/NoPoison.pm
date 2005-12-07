@@ -2,7 +2,7 @@ package CGI::NoPoison;
 use strict;
 use Carp 'croak';
 
-our $VERSION = '3.10';
+our $VERSION = '3.11';
 
 #note that we are overriding AUTOLOADed methods in CGI.pm in this way
 #so we aren't having to use the "no warnings 'redefine'" pragma ;)
@@ -13,7 +13,15 @@ sub CGI::FETCH {
 	#potential security problems, why not instead return an
 	#anonymous array and just dereference it later ? 
     #return join("\0",$_[0]->param($_[1]));
-	return  [$_[0]->param($_[1])];
+	my @a = $_[0]->param($_[1]);
+	if ( scalar( @a ) > 1 )
+	{
+		return [$_[0]->param($_[1])]; # return anon-array if more than one element
+	}
+	else
+	{
+		return $_[0]->param($_[1]); # behave normally otherwise, so we have a true drop-in replacement
+	}
 }
 
 #and if we're going to do THAT, well, we might as well
@@ -40,8 +48,6 @@ sub CGI::STORE {
 }
 
 1;
-
-1; #this line is important and will help the module return a true value
 __END__
 
 =pod 
